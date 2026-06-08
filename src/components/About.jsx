@@ -27,14 +27,10 @@ export const About = () => {
             </div>
           </div>
 
-          {/* 头像区域 */}
+          {/* 头像区域 - 使用渐变占位符 */}
           <div className="lg:col-span-4">
-            <div className="aspect-[3/4] overflow-hidden">
-              <img
-                src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20minimalist%20portrait%20black%20background%20fashion%20style%20portrait_4_3&image_size=portrait_4_3"
-                alt="AI Designer"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-              />
+            <div className="aspect-[3/4] bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+              <div className="text-gray-700 text-9xl font-extralight">✦</div>
             </div>
           </div>
 

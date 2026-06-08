@@ -14,8 +14,7 @@ export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center">
       {/* 极简背景 */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black" />
+      <div className="absolute inset-0 bg-black">
         {/* 微妙的网格背景 */}
         <div className="absolute inset-0 opacity-5" style={{
           backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)',

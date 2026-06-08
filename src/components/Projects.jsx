@@ -4,19 +4,25 @@ export const Projects = () => {
       id: 1,
       title: 'Futuristic Cityscape',
       category: 'AI Art',
-      image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=sleek%20minimal%20architecture%20design%20monochrome%20landscape_16_9&image_size=landscape_16_9',
+      description: 'Exploring the boundaries of AI-generated art and design. Each piece represents a unique blend of technology and creativity.',
+      gradient: 'bg-gradient-to-br from-gray-800 to-gray-900',
+      icon: '◈',
     },
     {
       id: 2,
       title: 'Brand Identity System',
       category: 'Branding',
-      image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=minimal%20geometric%20brand%20identity%20mockup%20dark%20background%20landscape_16_9&image_size=landscape_16_9',
+      description: 'Creating cohesive visual identities that communicate brand values and resonate with audiences.',
+      gradient: 'bg-gradient-to-br from-gray-700 to-gray-800',
+      icon: '◇',
     },
     {
       id: 3,
       title: 'Product Interface',
       category: 'UI/UX',
-      image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=clean%20modern%20app%20design%20dark%20theme%20minimalist%20landscape_16_9&image_size=landscape_16_9',
+      description: 'Designing intuitive user interfaces and experiences for digital products and platforms.',
+      gradient: 'bg-gradient-to-br from-gray-800 to-gray-700',
+      icon: '○',
     },
   ]
 
@@ -34,7 +40,7 @@ export const Projects = () => {
         {/* 项目网格 */}
         <div className="space-y-32">
           {projects.map((project, index) => (
-            <div key={project.id} className={`group grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+            <div key={project.id} className="group grid lg:grid-cols-2 gap-12 items-center">
               <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
                 <span className="text-gray-600 text-xs tracking-widest uppercase mb-3 block">
                   {project.category}
@@ -43,7 +49,7 @@ export const Projects = () => {
                   {project.title}
                 </h3>
                 <p className="text-gray-500 mb-6 leading-relaxed">
-                  Exploring the boundaries of AI-generated art and design. Each piece represents a unique blend of technology and creativity.
+                  {project.description}
                 </p>
                 <a href="#" className="inline-flex items-center gap-2 text-white text-sm tracking-wide group">
                   <span>View Project</span>
@@ -51,12 +57,10 @@ export const Projects = () => {
                 </a>
               </div>
               <div className={`${index % 2 === 1 ? 'lg:order-1' : ''} card-hover`}>
-                <div className="aspect-video overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
+                <div className={`aspect-video ${project.gradient} flex items-center justify-center relative overflow-hidden group`}>
+                  <div className="text-9xl text-gray-700 group-hover:scale-110 transition-transform duration-700">
+                    {project.icon}
+                  </div>
                 </div>
               </div>
             </div>
